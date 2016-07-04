@@ -1,11 +1,11 @@
-require_relative './question_data2.rb'
+require_relative './question_data.rb'
 
 Answer.destroy_all
 Question.destroy_all
 Subject.destroy_all
 User.destroy_all
 
-@test_user = User.create(username: "Joe", password: "moma")
+@test_user = User.create(email: "test@gmail.com", encrypted_password: "moma")
 
 question_data = get_question_data()
 

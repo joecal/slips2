@@ -2,16 +2,16 @@ class SessionsController < ApplicationController
 
   def new
     @user = User.new
-    @user.username = cookies[:username]
+    @user.email = cookies[:email]
   end
 
   def create
-    input_username = params[:user][:username]
-    if User.exists?(username: input_username)
-      @user = User.find_by(username: input_username)
-      if @user.password === params[:user][:password]
+    input_email = params[:user][:email]
+    if User.exists?(email: input_email)
+      @user = User.find_by(email: input_email)
+      if @user.password === params[:user][:encrypted_password]
         session[:user_id] = @user.id
-        cookies[:username] = @user.username
+        cookies[:email] = @user.email
         redirect_to @user
       else
         flash[:alert] = "Wrong password!"
