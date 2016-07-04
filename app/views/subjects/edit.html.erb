@@ -1,0 +1,10 @@
+<h2>Edit Subject</h2>
+
+<%= form_for @subject do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.submit %>
+<% end %>
+
+<%= link_to "Delete", @subject, method: :delete, class: "delete" %>

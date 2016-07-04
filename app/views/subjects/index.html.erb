@@ -1,0 +1,9 @@
+<h2>Subjects <%= link_to "Add Subject", new_subject_path, class: 'btn btn-mini' if @current_user %></h2>
+
+<ul>
+  <% @subjects.each do |subject| %>
+    <li>
+      <%= link_to subject.name, subject %>
+    </li>
+  <% end %>
+</ul>

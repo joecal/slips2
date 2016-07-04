@@ -1,0 +1,21 @@
+<h2>Questions</h2>
+
+<h3><%= link_to "CLI", '/subjects/2' %></h3>
+
+<ul>
+  <% Question.where(subject_id: 2).find_each do |question| %>
+    <li>
+      <%= link_to question.question_text, question %>
+    </li>
+  <% end %>
+</ul>
+
+<h3><%= link_to "Git", '/subjects/3' %></h3>
+
+<ul>
+  <% Question.where(subject_id: 3).find_each do |question| %>
+    <li>
+      <%= link_to question.question_text, question %>
+    </li>
+  <% end %>
+</ul>

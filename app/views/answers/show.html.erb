@@ -1,0 +1,7 @@
+<h3>Question:</h3>
+  <h5>Corresponding question text here. Figure out route.</h3>
+<h3>Answer:</h3>
+  <%= @answer.body %>
+  <%= link_to "Edit", edit_answer_path(@answer), class: 'btn btn-mini btn-success' if @current_user %>
+  <%= link_to "Delete", @answer, method: :delete, class: 'btn btn-mini btn-danger' if @current_user %>
+<h5>Submitted by <%= link_to @answer.user.username, @answer.user %></h5>

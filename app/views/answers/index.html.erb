@@ -1,0 +1,21 @@
+<h2>Answers</h2>
+
+<h3><%= link_to "CLI", '/subjects/2' %></h3>
+
+<ul>
+  <% Answer.where(question_id: 1).find_each do |answer| %>
+    <li>
+      <%= link_to answer.body, answer %>
+    </li>
+  <% end %>
+</ul>
+
+<h3><%= link_to "Git", '/subjects/3' %></h3>
+
+<ul>
+  <% Answer.where(question_id: 2).find_each do |answer| %>
+    <li>
+      <%= link_to answer.body, answer %>
+    </li>
+  <% end %>
+</ul>
