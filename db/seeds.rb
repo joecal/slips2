@@ -1,4 +1,4 @@
-require_relative './question_data2.rb'
+require_relative './question_data.rb'
 
 Answer.destroy_all
 Question.destroy_all
