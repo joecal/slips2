@@ -3,5 +3,5 @@ class Subject < ActiveRecord::Base
   has_many :questions, dependent: :destroy
   validates :name, presence: :true
   belongs_to :user
-  validates :user, presence: :true
+  # validates :user, presence: :true
 end

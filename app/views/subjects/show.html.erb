@@ -1,4 +1,4 @@
-<h2><%= @subject.name %></h2>
+<h2><%= @subject.name.join(" ") %></h2>
 
 <h3>Questions <%= link_to "Add Question", new_subject_question_path(@subject), class: 'btn btn-mini' if @current_user %></h3>
 

@@ -3,7 +3,7 @@
 <ul>
   <% @subjects.each do |subject| %>
     <li>
-      <%= link_to subject.name, subject %>
+      <%= link_to subject.name.join(" "), subject %>
     </li>
   <% end %>
 </ul>
