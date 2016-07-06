@@ -3,6 +3,7 @@ class CreateAnswers < ActiveRecord::Migration
     create_table :answers do |t|
       t.string :body
       t.integer :user_id
+      t.integer :subject_id
       t.references :question, index: true, foreign_key: true
     end
   end

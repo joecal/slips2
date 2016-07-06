@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20160701230054) do
   create_table "answers", force: :cascade do |t|
     t.string  "body"
     t.integer "user_id"
+    t.integer "subject_id"
     t.integer "question_id"
   end
 

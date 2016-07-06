@@ -1,4 +1,4 @@
-<h2>Questions</h2>
+<h2>All Questions</h2>
 <ul>
   <h3><%= link_to "CLI", '/subjects/2' %></h3>
   <ul>
@@ -144,4 +144,13 @@
       </li>
     <% end %>
   </ul>
+</ul>
+<br>
+<h3><%= @current_user.username + "'s Submitted Questions" %></h3>
+<ul>
+  <% @current_user.questions.find_each do |question| %>
+    <li>
+      <%= link_to question.question_text, question %>
+    </li>
+  <% end %>
 </ul>

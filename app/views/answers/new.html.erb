@@ -1,9 +1,9 @@
-<h2><%= @question.subject.name.join(" ") %>:</h2>
-
-<h2><%= link_to @question.question_text, @question %></h2>
-
+<h2><%= @question.subject.name %></h2>
+<ul>
+<h3><%= @question.question_text %></h3>
+</ul>
 <%= form_for [@question, @answer] do |f| %>
   <%= f.text_field :body %>
 
-  <%= f.submit %>
+  <%= f.submit "Submit Answer"%>
 <% end %>

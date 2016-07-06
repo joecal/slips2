@@ -1,5 +1,5 @@
 class AnswersController < ApplicationController
-  
+
   # index
   def index
     @answers = Answer.all
@@ -16,7 +16,9 @@ class AnswersController < ApplicationController
   def create
     redirect_to root_path unless @current_user
     @question = Question.find(params[:question_id])
+    subject_id = @question.subject_id
     @answer = @question.answers.new(answer_params)
+    @answer.subject_id = subject_id
     @answer.user = @current_user
     @answer.save
 
@@ -55,6 +57,6 @@ class AnswersController < ApplicationController
 
   private
   def answer_params
-    params.require(:answer).permit(:body)
+    params.require(:answer).permit(:body, :subject_id)
   end
 end

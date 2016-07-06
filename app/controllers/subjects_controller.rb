@@ -13,7 +13,11 @@ class SubjectsController < ApplicationController
   # create
   def create
     redirect_to root_path unless @current_user
-    @subject = @current_user.subjects.create!(subject_params)
+    @subject = Subject.new(subject_params)
+    @subject.user = @current_user
+    @subject.save
+    # subject_id = @subject.subject_id
+    # @subject.subject_id = subject_id
 
     redirect_to @subject
   end
@@ -48,7 +52,7 @@ class SubjectsController < ApplicationController
   end
 
   private
-  def question_params
+  def subject_params
     params.require(:subject).permit(:name)
   end
 end

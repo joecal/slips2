@@ -1,10 +1,9 @@
 <h2>Edit Answer</h2>
 
 <%= form_for @answer do |f| %>
-  <%= f.label :body %>
   <%= f.text_field :body %>
 
   <%= f.submit %>
 <% end %>
 
-<%= link_to "Delete!", @answer, method: :delete, class: "delete" %>
+<%= link_to "Delete Answer", @answer, method: :delete, class: 'btn btn-mini btn-danger' %>

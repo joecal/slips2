@@ -5,30 +5,24 @@ User.destroy_all
 
 @test_user = User.create(username: "Joe", password: "moma")
 
-subject_list = [
-  ["CLI"],
-  ["Git"],
-  ["Misc"],
-  ["Angular"],
-  ["Single Page Apps"],
-  ["Express"],
-  ["Sequelize"],
-  ["APIs"],
-  ["RWD"],
-  ["CSS2"],
-  ["Databases"],
-  ["Javascript"],
-  ["OOJS"],
-  ["Ruby MVC"],
-  ["Ruby Basics"],
-  ["ActiveRecord"],
-  ["HTML and CSS"],
-  ["HTTP"]
-]
-
-subject_list.each do |name|
-  Subject.create!( name: name )
-end
+Subject.create!(name: "CLI" )
+Subject.create!(name: "Git" )
+Subject.create!(name: "Misc" )
+Subject.create!(name: "Angular" )
+Subject.create!(name: "Single Page Apps" )
+Subject.create!(name: "Express" )
+Subject.create!(name: "Sequelize" )
+Subject.create!(name: "APIs" )
+Subject.create!(name: "RWD" )
+Subject.create!(name: "CSS2" )
+Subject.create!(name: "Databases" )
+Subject.create!(name: "Javascript" )
+Subject.create!(name: "OOJS" )
+Subject.create!(name: "Ruby MVC" )
+Subject.create!(name: "Ruby Basics" )
+Subject.create!(name: "ActiveRecord" )
+Subject.create!(name: "HTML and CSS" )
+Subject.create!(name: "HTTP" )
 
 question_list = [
   ["Why would a developer prefer the command line over a GUI?", 1],
