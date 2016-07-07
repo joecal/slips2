@@ -1,151 +1,16 @@
 <h2>All Submitted Answers</h2>
-<ul>
-  <h4><%= link_to "CLI", '/subjects/1' %></h4>
+<% Subject.find_each do |subject_id| %>
   <ul>
-    <% Answer.where(subject_id: 1).find_each do |answer| %>
-      <li>
-        <%= link_to answer.body, answer %>
-      </li>
-    <% end %>
+    <h4><%= link_to subject_id.name, subject_id %></h4>
+    <ul>
+      <% Answer.where(subject_id: subject_id).find_each do |answer| %>
+        <li>
+          <%= link_to answer.body, answer %>
+        </li>
+      <% end %>
+    </ul>
   </ul>
-  <h4><%= link_to "Git", '/subjects/2' %></h4>
-  <ul>
-    <% Answer.where(subject_id: 2).find_each do |answer| %>
-      <li>
-        <%= link_to answer.body, answer %>
-      </li>
-    <% end %>
-  </ul>
-  <h4><%= link_to "Misc.", '/subjects/3' %></h4>
-  <ul>
-    <% Answer.where(subject_id: 3).find_each do |answer| %>
-      <li>
-        <%= link_to answer.body, answer %>
-      </li>
-    <% end %>
-  </ul>
-  <h4><%= link_to "Angular", '/subjects/4' %></h4>
-  <ul>
-    <% Answer.where(subject_id: 4).find_each do |answer| %>
-      <li>
-        <%= link_to answer.body, answer %>
-      </li>
-    <% end %>
-  </ul>
-  <h4><%= link_to "Single Page Apps", '/subjects/5' %></h4>
-  <ul>
-    <% Answer.where(subject_id: 5).find_each do |answer| %>
-      <li>
-        <%= link_to answer.body, answer %>
-      </li>
-    <% end %>
-  </ul>
-  <h4><%= link_to "Express", '/subjects/6' %></h4>
-  <ul>
-    <% Answer.where(subject_id: 6).find_each do |answer| %>
-      <li>
-        <%= link_to answer.body, answer %>
-      </li>
-    <% end %>
-  </ul>
-  <h4><%= link_to "Sequelize", '/subjects/7' %></h4>
-  <ul>
-    <% Answer.where(subject_id: 7).find_each do |answer| %>
-      <li>
-        <%= link_to answer.body, answer %>
-      </li>
-    <% end %>
-  </ul>
-  <h4><%= link_to "APIs", '/subjects/8' %></h4>
-  <ul>
-    <% Answer.where(subject_id: 8).find_each do |answer| %>
-      <li>
-        <%= link_to answer.body, answer %>
-      </li>
-    <% end %>
-  </ul>
-  <h4><%= link_to "RWD", '/subjects/9' %></h4>
-  <ul>
-    <% Answer.where(subject_id: 9).find_each do |answer| %>
-      <li>
-        <%= link_to answer.body, answer %>
-      </li>
-    <% end %>
-  </ul>
-  <h4><%= link_to "CSS2", '/subjects/10' %></h4>
-  <ul>
-    <% Answer.where(subject_id: 10).find_each do |answer| %>
-      <li>
-        <%= link_to answer.body, answer %>
-      </li>
-    <% end %>
-  </ul>
-  <h4><%= link_to "Databases", '/subjects/11' %></h4>
-  <ul>
-    <% Answer.where(subject_id: 11).find_each do |answer| %>
-      <li>
-        <%= link_to answer.body, answer %>
-      </li>
-    <% end %>
-  </ul>
-  <h4><%= link_to "Javascript", '/subjects/12' %></h4>
-  <ul>
-    <% Answer.where(subject_id: 12).find_each do |answer| %>
-      <li>
-        <%= link_to answer.body, answer %>
-      </li>
-    <% end %>
-  </ul>
-  <h4><%= link_to "OOJS", '/subjects/13' %></h4>
-  <ul>
-    <% Answer.where(subject_id: 13).find_each do |answer| %>
-      <li>
-        <%= link_to answer.body, answer %>
-      </li>
-    <% end %>
-  </ul>
-  <h4><%= link_to "Ruby MVC", '/subjects/14' %></h4>
-  <ul>
-    <% Answer.where(subject_id: 14).find_each do |answer| %>
-      <li>
-        <%= link_to answer.body, answer %>
-      </li>
-    <% end %>
-  </ul>
-  <h4><%= link_to "Ruby Basics", '/subjects/15' %></h4>
-  <ul>
-    <% Answer.where(subject_id: 15).find_each do |answer| %>
-      <li>
-        <%= link_to answer.body, answer %>
-      </li>
-    <% end %>
-  </ul>
-  <h4><%= link_to "ActiveRecord", '/subjects/16' %></h4>
-  <ul>
-    <% Answer.where(subject_id: 16).find_each do |answer| %>
-      <li>
-        <%= link_to answer.body, answer %>
-      </li>
-    <% end %>
-  </ul>
-  <h4><%= link_to "HTML and CSS", '/subjects/17' %></h4>
-  <ul>
-    <% Answer.where(subject_id: 17).find_each do |answer| %>
-      <li>
-        <%= link_to answer.body, answer %>
-      </li>
-    <% end %>
-  </ul>
-  <h4><%= link_to "HTTP", '/subjects/18' %></h4>
-  <ul>
-    <% Answer.where(subject_id: 18).find_each do |answer| %>
-      <li>
-        <%= link_to answer.body, answer %>
-      </li>
-    <% end %>
-  </ul>
-</ul>
-<br>
+<% end %>
 <h3><%= @current_user.username + "'s Submitted Answers" if @current_user %></h3>
 <ul>
   <% @current_user.answers.find_each do |answer| %>

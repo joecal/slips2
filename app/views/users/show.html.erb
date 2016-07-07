@@ -1,14 +1,7 @@
-<% @question = Question.all.sample %>
+<% @question = random_question %>
 
-<% answer_user_id_array = @question.answers.collect(&:user_id) %>
-<% answer_user_id = answer_user_id_array[0] %>
-<% if answer_user_id == @current_user.id %>
-<% redirect_to @user %>
-<% else %>
-<% end %>
-
-<h2><%= @question.subject.name %></h2>
-<ul>
-<h3><%= @question.question_text %></h3>
-</ul>
-<%= link_to "Answer", new_question_answer_path(@question), class: 'btn' if @current_user %>
+  <h2><%= @question.subject.name %></h2>
+  <ul>
+  <h3><%= @question.question_text %></h3>
+  </ul>
+  <%= link_to "Answer", new_question_answer_path(@question), class: 'btn' if @current_user %>
