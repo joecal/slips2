@@ -4,7 +4,9 @@
 
 *** Installation Instructions ***
 
-  http://heroku
+  Deployed App - http://slips2.herokuapp.com
+
+  Operation Screencast - https://www.youtube.com/watch?v=_aiGxdGbzaY
 
 *** Technologies Used ***
 
