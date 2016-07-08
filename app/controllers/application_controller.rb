@@ -14,19 +14,17 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def random_question
-
-    td = Date.today
-    todays_date = td.strftime('%Y/%m/%d')
-
-
-
-    if Date.today == Date.between?(2016-07-06..2016-07-08)
-      subject1 = Subject.find(1)
-      get_random_question = subject1.questions.sample
-      @question = get_random_question
-    else
-    end
+  # def random_question
+  #
+  #   td = Date.today
+  #   todays_date = td.strftime('%Y/%m/%d')
+  #
+  #   if Date.today == Date.between?(2016-07-06..2016-07-08)
+  #     subject1 = Subject.find(1)
+  #     get_random_question = subject1.questions.sample
+  #     @question = get_random_question
+  #   else
+  #   end
 
   #  subject1 = Subject.find(1)
   #  get_random_question = subject1.questions.sample
