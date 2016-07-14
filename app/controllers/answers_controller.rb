@@ -7,6 +7,7 @@ class AnswersController < ApplicationController
 
   # new
   def new
+    # AM: +1
     redirect_to root_path unless @current_user
     @question = Question.find(params[:question_id])
     @answer = @question.answers.new
@@ -14,6 +15,7 @@ class AnswersController < ApplicationController
 
   # create
   def create
+    # AM: I see you use this multiple times. Could you use something like `before_action` to make your controller more DRY?
     redirect_to root_path unless @current_user
     @question = Question.find(params[:question_id])
     subject_id = @question.subject_id
@@ -57,6 +59,7 @@ class AnswersController < ApplicationController
 
   private
   def answer_params
+    # AM: Do you need to pass in a `subject_id` through `answer_params` or is that something you can access via the question an answer belongs to?
     params.require(:answer).permit(:body, :subject_id)
   end
 end

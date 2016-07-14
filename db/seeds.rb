@@ -226,6 +226,8 @@ question_list = [
   ["Define the purpose of the 'action' and 'method' attributes of a form.", 18]
 ]
 
+# AM: It shouldn't cause a problem here, but in general I wouldn't hardcode subject IDs.
+# AM: Instead you could save each subject to a variable when you create it (e.g., `var cli = Subject.create!(name: "CLI")`) and then reference that in each item in `question_list` instead of the id.
 question_list.each do |question_text, subject_id|
   Question.create!( question_text: question_text, subject_id: subject_id )
 end
