@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 20160701230054) do
 
   add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
 
+  # AM: Might be helpful to include the correct answer with a question (unless that's functionality you'd like to avoid).
   create_table "questions", force: :cascade do |t|
     t.text    "question_text"
     t.integer "subject_id"
